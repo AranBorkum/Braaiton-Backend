@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "braaiton-backend"
+version = "0.1.0"
+description = ""
+authors = ["Aran <aran.borkum@mpb.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.0"
+djangorestframework = "^3.14.0"
+status = "^0.2.5"
+black = "^23.11.0"
+isort = "^5.12.0"
+stripe = "^7.8.1"
+segno = "^1.6.0"
+django-crontab = "^0.7.1"
+django-cors-headers = "^4.3.1"
+pytest-django = "^4.7.0"
+psycopg2-binary = "^2.9.9"
+django-dotenv = "^1.4.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

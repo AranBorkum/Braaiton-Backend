@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    command: poetry run python /code/src/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+      ALLOWED_HOSTS: "*"
+    depends_on:
+      - db
+    networks:
+      - braaiton
+
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    networks:
+      - braaiton
+    volumes:
+      - db:/var/lib/postgresql/data
+
+networks:
+  braaiton:
+    driver: bridge
+
+volumes:
+  db:
+    driver: local

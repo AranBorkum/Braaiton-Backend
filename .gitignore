@@ -1,2 +1,6 @@
 .idea
 .DS_Store
+
+src/.env
+**/__pycache__
+**/*.pyc
